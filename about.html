@@ -11,31 +11,45 @@
 	<link rel="stylesheet" type="text/css" href="css/fontawesome/css/all.css">
 
 </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        h2, h3 {
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+    </style>
+</head>
 <body>
 
 	<!-- Navbar Section Start -->
-	<nav class="navbar navbar-dark navbar-expand-lg"  uk-sticky="top:100; animation: uk-animation-slide-top; bottom: #sticky-on-scroll-up">
+	<nav class="navbar navbar-dark navbar-expand-lg" uk-sticky="top:100; animation: uk-animation-slide-top; bottom: #sticky-on-scroll-up">
 		<div class="container">
 			<a href="index.html" class="navbar-brand">
-				<img src="img/logo1.png" class="img-fluid p-0" style="width: 35%; filter: brightness(0) invert(1);">
-				<div class="ml-2 p-0 d-inline webT">MrHautaniemiTutorials</div>
+				<img src="img/logo1.png" class="img-fluid p-0" style="width: 12%; brightness(100);">
 			</a>
+			<div class="p-0 d-inline webT">MrHautaniemiTutorials</div> <!-- Removed ml-2 class -->
 			<button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navBar">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navBar">
-				<ul class="navbar-nav  ml-auto ">
-
+				<ul class="navbar-nav ml-auto">
 					<li class="nav-item">
-						<a class="nav-link " href="index.html">Home</a>
+						<a class="nav-link" href="index.html">Home</a>
 					</li>
-					<li class="nav-item active">
+					<li class="nav-item">
 						<a class="nav-link" href="about.html">About</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="courses.html">Courses</a>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item active">
 						<a class="nav-link" href="blog.html">Blog</a>
 					</li>
 					<li class="nav-item">
@@ -45,7 +59,7 @@
 			</div>
 		</div>
 	</nav>
-	<!-- Nav Section End -->
+	
 
 	
 	<!-- About Section Start -->
@@ -69,74 +83,67 @@
 	<section>
 		<div class="container">
 			<div class="row">
-
-      		<h2 id="portfolio">Portfolio</h2>
-
-			<hr>
-				
-			<h3 id="professional-summary">Professional Summary</h3>
-			<p>
-			I am currently a teacher at Mossman State High School. Before this,  I studied a Bachelor of Mathematics and Science (Physics) at Queensland University of Technology, and then completed my Masters of Teaching at Griffith University.
-			<br><br>
-			In my final years of uni, I developed a keen interest in medical mathematics and was lucky enough to become involved in varying research projects. You can see some of these projects below. </p>
-
-			<hr>
-
-			<h3 id="professional-development">Professional Development</h3>
-			<p><a href="https://research.qut.edu.au/biofabrication/">Predictive Model for Aneurysm</a>
-			<br>
-			<img src="images/VRES.jpg?raw=true"></p>
-			<p> In my final year of my math and physics degree, I worked with QUT's biofabrication and tissue morphology lab to create a predictive model for aneurysms. Although the specifications of this project are  confidential there is a large potential for helping others through a combination of simulation and verification. This research has since been published, and can be acccessed here: https://pubmed.ncbi.nlm.nih.gov/36604495/ </p>
-
-			<hr>
-			<p><a href="/pdf/Poster.pdf">Biased Migration of Chemotherapy</a>
-			<br>
-			<img src="images/2019.jpg?raw=true">
-			<br></p>
-			<p> Over the summer of 2019/2020 I was fortunate enough to research the migration patterns of chemotherapy to better understand this process on a mathematical scale. Within this project I also simulated mechanisms to bias its migration, which is important as chemotherapy currently kills both malignant and healthy cells. My simulations had strong supporting evidence that to mitigate this we should invest in shielding techniques instead of changing chemotherapy itself. </p>
-
-			<hr>
-
-			<p><a href="https://youtu.be/b_wwrg5Yfdg?t=89">Construction of MRI Interface</a>
-			<br>
-			<img src="images/MRI.jpg?raw=true">
-			<br></p>
-			<p> Within my undergraduate classwork I have taken a keen interest to the operation of MRI. As an aspiring mathematician and physcist, I am able to pursue this from two disjoint yet complimentary perspectives. Truly, it is quantum physics that provides the theoretical framework for operation, but mathematics that allows for the extraction of this data in meaningful ways. Within this project I coded the interface of an MRI machine and was successfully able to digitally reconstruct the slice of the brain you see above.<br> <i>Acknowledgement to Evelyn Chen for her contribution on this task.</i></p>
-
-			<hr>
-
-			<p><a href="">Temperature Spatial Analysis</a>
-			<br>
-			<img src="images/temp4.jpg?raw=true"></p>
-			<p> If you've ever touched your laptop after having it running for a while you'd correctly notice that it gets hot. Perhaps interestingly, this is a not a constant temperature. Some parts of the computer will be warmer (and cooler) than others. It is important to understand this distriubtion since not all computer components can operate at the same temperatures. In this project I analysed the temperature distribtuion of an electronic component and was able to deduce the global marketability for such a component.  </p>
-
-			<hr>
-
-			<h3 id="other-experience">Other Experience</h3>
-
-			<p><a href="https://www.qut.edu.au/study/career-advisers-and-teachers/young-accelerators">STEM Ambassador</a>
-			<br>
-			<img src="images/amb.jpg?raw=true"></p>
-			<p> As a STEM ambassador, I run workshops intended for audiences ranging upwards from 13 years. The purpose of this can be anywhere from the basics of coding or statistics, to the intricacies of time travel itself. I find this highly rewarding and bolsters my communicative abilities as a scientist. Truly, researchers must be able to communicate their findings to change the world so this is a skill and position I hold in high regard. </p>
-
-			<hr>
-			<h3 id="what-i-enjoy-outside-of-research">What I Enjoy Outside of Research</h3>
-			<p><img src="images/col.jpg?raw=true"></p>
-			<p> Although academia is a large part of my life, it certainly doesn't stop here for me. Above all, my greatest passion is people. I see immeasurable value in community and do everything in my power to foster this. Whether it's hosting sunday lunch, organising fitness groups or a friday night at the botanical bar (love for QUT), I am happy to go the extra mile to bring people together, and hopefully make them as happy as they make me. In addition to this, I've started calisthenics training to strengthen me mentally and physically. Outside of these, I spend any remaining time in the kitchen cooking or relaxing over some needed video games. </p>
-
-			<hr>
-			<h3 id="awards">Awards</h3>
-			<p> * Dean's List for Academic Excellence
-			<br> * Regional Enterprise Scholarship
-			<br> * Relocation Scholarship for Rural Transitioners
-			<br> * Australian Nominee for the 2018 Global Youth Leaders conference in America
-			<br> * Turn to Teaching Intern
-			<br> * QUT Dean's scholar alumni	
-			</p>
-		
+				<h2 id="portfolio">Portfolio</h2>
+				<hr><div></div>
+				<h3"> </h3>
+				<h3 id="professional-summary">Professional Summary</h3>
+				<p>
+					I am currently a teacher at Mossman State High School. Before this, I studied a Bachelor of Mathematics and Science (Physics) at Queensland University of Technology, and then completed my Masters of Teaching at Griffith University.
+					<br><br>
+					In my final years of uni, I developed a keen interest in medical mathematics and was lucky enough to become involved in varying research projects. You can see some of these projects below.
+				</p>
+				<hr>
+				<h3 id="professional-development">Professional Development</h3>
+				<p><a href="https://research.qut.edu.au/biofabrication/">Predictive Model for Aneurysm</a><br>
+				<img src="img/gallery4.png" class="img-fluid" width = 50%></p>
+				<p>
+					In my final year of my math and physics degree, I worked with QUT's biofabrication and tissue morphology lab to create a predictive model for aneurysms. Although the specifications of this project are confidential there is a large potential for helping others through a combination of simulation and verification. This research has since been published, and can be accessed here: <a href="https://pubmed.ncbi.nlm.nih.gov/36604495/">https://pubmed.ncbi.nlm.nih.gov/36604495/</a>
+				</p>
+				<hr>
+				<p><a href="">Biased Migration of Chemotherapy</a><br>
+				<img src="img/gallery1.jpg?raw=true" class="img-fluid"  width = 50%><br></p>
+				<p>
+					Over the summer of 2019/2020 I was fortunate enough to research the migration patterns of chemotherapy to better understand this process on a mathematical scale. Within this project I also simulated mechanisms to bias its migration, which is important as chemotherapy currently kills both malignant and healthy cells. My simulations had strong supporting evidence that to mitigate this we should invest in shielding techniques instead of changing chemotherapy itself.
+				</p>
+				<hr>
+				<p><a href="https://youtu.be/b_wwrg5Yfdg?t=89">Construction of MRI Interface</a><br>
+				<img src="img/gallery2.png" class="img-fluid"  width = 70%><br></p>
+				<p>
+					Within my undergraduate classwork I have taken a keen interest to the operation of MRI. As an aspiring mathematician and physicist, I am able to pursue this from two disjoint yet complimentary perspectives. Truly, it is quantum physics that provides the theoretical framework for operation, but mathematics that allows for the extraction of this data in meaningful ways. Within this project I coded the interface of an MRI machine and was successfully able to digitally reconstruct the slice of the brain you see above.<br>
+					<i>Acknowledgement to Evelyn Chen for her contribution on this task.</i>
+				</p>
+				<hr>
+				<p><a href="">Temperature Spatial Analysis</a><br>
+				<img src="img/gallery5.png" class="img-fluid"></p>
+				<p>
+					If you've ever touched your laptop after having it running for a while you'd correctly notice that it gets hot. Perhaps interestingly, this is a not a constant temperature. Some parts of the computer will be warmer (and cooler) than others. It is important to understand this distribution since not all computer components can operate at the same temperatures. In this project I analysed the temperature distribution of an electronic component and was able to deduce the global marketability for such a component.
+				</p>
+				<hr>
+				<h3 id="other-experience">Other Experience</h3>
+				<p><a href="https://www.qut.edu.au/study/career-advisers-and-teachers/young-accelerators">STEM Ambassador</a><br>
+				<img src="img/gallery3.png" class="img-fluid"></p>
+				<p>
+					As a STEM ambassador, I run workshops intended for audiences ranging upwards from 13 years. The purpose of this can be anywhere from the basics of coding or statistics, to the intricacies of time travel itself. I find this highly rewarding and bolsters my communicative abilities as a scientist. Truly, researchers must be able to communicate their findings to change the world so this is a skill and position I hold in high regard.
+				</p>
+				<hr>
+				<h3 id="what-i-enjoy-outside-of-research">What I Enjoy Outside of Research</h3>
+				<p><img src="img/other.png" class="img-fluid"></p>
+				<p>
+					Although academia is a large part of my life, it certainly doesn't stop here for me. Above all, my greatest passion is people. I see immeasurable value in community and do everything in my power to foster this. Whether it's hosting Sunday lunch, organising fitness groups or a Friday night at the local bowlsie, I am happy to go the extra mile to bring people together, and hopefully make them as happy as they make me. Outside of these, I spend any remaining time in the kitchen cooking or relaxing over some needed video games.
+				</p>
+				<hr>
+				<h3 id="awards">Awards</h3>
+				<ul>
+					<li>Dean's List for Academic Excellence</li>
+					<li>Regional Enterprise Scholarship</li>
+					<li>Relocation Scholarship for Rural Transitioners</li>
+					<li>Australian Nominee for the 2018 Global Youth Leaders conference in America</li>
+					<li>Turn to Teaching Intern</li>
+					<li>QUT Dean's scholar alumni</li>
+				</ul>
 			</div>
 		</div>
-</section>
+	</section>
 
 
 <!-- About Testimonial Section Start -->
@@ -177,6 +184,22 @@
 		</div>
 	</div>
 </footer>
+
+<style>
+    /* CSS to center images and make them the same size */
+    .img-fluid {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto;
+    }
+	/* Custom CSS to position MrHautaniemiTutorials next to the logo */
+	.navbar-brand {
+    display: flex;
+    align-items: center;
+	}
+</style>
+
 
 <script type="text/javascript" src="js/jquery-slim.min.js"></script>
 <script type="text/javascript" src="js/popper.min.js"></script>

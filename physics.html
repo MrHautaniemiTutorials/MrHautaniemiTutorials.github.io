@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/uikit.min.css"> 
+    <link rel="stylesheet" type="text/css" href="css/fontawesome/css/all.css">
+    <title>Video Grid</title>
+    <style>
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .grid-column {
+            flex: 1;
+            min-width: 200px;
+            max-width: 200px;
+            padding: 10px;
+        }
+        .grid-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        form {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<!-- Navbar Section Start -->
+<nav class="navbar navbar-dark navbar-expand-lg" uk-sticky="top:100; animation: uk-animation-slide-top; bottom: #sticky-on-scroll-up">
+    <div class="container">
+        <a href="index.html" class="navbar-brand">
+            <img src="img/logo1.png" class="img-fluid p-0" style="width: 12%; brightness(100);">
+            <div class="ml-2 p-0 d-inline webT">MrHautaniemiTutorials</div>
+        </a>
+        <button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navBar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navBar">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="courses.html">Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="blog.html">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Nav Section End -->
+
+<section>
+    <div class="container">
+        <div class="row">
+            <h2 id="portfolio">Physics</h2>
+            <hr><div></div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container" id="video-grid" class="grid-container"></div>
+    
+    <!-- form id="add-video-form" action="https://script.google.com/macros/s/AKfycbyJe1ts_hm-rZlH7cyLFJMrDuxyPbpqfKNM8KT-q5I7YhGU_nt3REPt7l0hQasxGkBXYg/exec" method="POST">
+        <label for="video-url">YouTube URL:</label>
+        <input type="text" id="video-url" name="url" required>
+        <button type="submit">Add Video</button>
+    </form>
+</section>
+<!-->
+<footer id="footer" class="py-3 text-center text-light">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="display-5 mb-0 text-light">MrHautaniemiTutorials</h2>
+                <div class="d-flex flex-row justify-content-center p-3">
+                    <div class="px-5">
+                        <a href="#">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                    <div class="px-5">
+                        <a href="#">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                    <div class="px-5">
+                        <a href="#">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                Glozzome.com © 2019 All Rights Reserved by MrhRifat
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch('https://script.google.com/macros/s/AKfycbyJe1ts_hm-rZlH7cyLFJMrDuxyPbpqfKNM8KT-q5I7YhGU_nt3REPt7l0hQasxGkBXYg/exec')
+            .then(response => response.json())
+            .then(data => {
+                const grid = document.getElementById('video-grid');
+                let column, videoCount = 0;
+
+                data.videos.forEach((url, index) => {
+                    const videoId = new URL(url).searchParams.get("v");
+                    const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+                    
+                    if (videoCount % 5 === 0) {
+                        column = document.createElement('div');
+                        column.className = 'grid-column';
+                        grid.appendChild(column);
+                    }
+
+                    const div = document.createElement('div');
+                    div.className = 'grid-item';
+                    div.innerHTML = `<iframe width="200" height="150" src="${embedUrl}" frameborder="0" allowfullscreen></iframe>`;
+                    column.appendChild(div);
+
+                    videoCount++;
+                });
+            });
+    });
+
+    document.getElementById('add-video-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const videoUrl = document.getElementById('video-url').value;
+        fetch('https://script.google.com/macros/s/AKfycbyJe1ts_hm-rZlH7cyLFJMrDuxyPbpqfKNM8KT-q5I7YhGU_nt3REPt7l0hQasxGkBXYg/exec', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams({
+                url: videoUrl,
+            }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                location.reload();
+            } else {
+                alert('Error adding video');
+            }
+        });
+    });
+</script>
+<script type="text/javascript" src="js/jquery-slim.min.js"></script>
+<script type="text/javascript" src="js/popper.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/uikit.min.js"></script>
+<script type="text/javascript" src="js/uikit-icons.min.js"></script>
+</body>
+</html>
